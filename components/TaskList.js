@@ -39,7 +39,9 @@ function TaskList() {
 
   function handleDragEnd(event) {
     const { active, over } = event;
-
+    console.log("active", active);
+    console.log("over", over);
+    console.log("event", event);
     if (active.id !== over.id) {
       dispatch(updateTaskStatus({ taskId: active.id, status: over.id }))
         .then(unwrapResult)

@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Container,
   CssBaseline,
@@ -36,11 +35,9 @@ const ForgotPassword = () => {
         data: {
           email: formData.email,
         },
-      })
-        .then((res) => {
-          setSuccess(true);
-        })
-        .catch((err) => {});
+      }).then(() => {
+        setSuccess(true);
+      });
     }
   };
   return (
@@ -48,7 +45,6 @@ const ForgotPassword = () => {
       maxWidth="xl"
       sx={{
         height: "100vh",
-        // bgcolor: "#eee",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -57,61 +53,65 @@ const ForgotPassword = () => {
     >
       <CssBaseline />
       <Paper
-        elevation={4}
-        sx={{
-          padding: "3rem 2rem",
-          width: { xs: "auto", md: "420px" },
-        }}
+        className="transparentBox"
+        sx={{ padding: "1rem", backgroundColor: "transparent" }}
       >
-        <Typography
-          variant="h5"
-          gutterBottom
+        <Paper
+          elevation={4}
           sx={{
-            fontWeight: "bold",
-            textAlign: "center",
+            padding: "3rem 2rem",
+            width: { xs: "auto", md: "420px" },
           }}
         >
-          Recover your password
-        </Typography>
-        {success && (
-          <Typography sx={{ marginY: "1.5rem", textAlign: "justify" }}>
-            If we find an eligible account associated with that address, we will
-            send an email to the address containing further instructions to
-            recover your password.
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
+          >
+            Recover your password
           </Typography>
-        )}
-        {!success && (
-          <Typography sx={{ marginY: "1.5rem" }} color="textSecondary">
-            Please provide a valid email address to recover your account
-            password.
-          </Typography>
-        )}
-        {!success && (
-          <Stack gap={2}>
-            <TextField
-              id="email"
-              type="email"
-              name="email"
-              label="Email"
-              placeholder="your@email.com"
-              value={formData.email}
-              onChange={inputHandler}
-              fullWidth
-              autoFocus
-            />
+          {success && (
+            <Typography sx={{ marginY: "1.5rem", textAlign: "justify" }}>
+              If we find an eligible account associated with that address, we
+              will send an email to the address containing further instructions
+              to recover your password.
+            </Typography>
+          )}
+          {!success && (
+            <Typography sx={{ marginY: "1.5rem" }} color="textSecondary">
+              Please provide a valid email address to recover your account
+              password.
+            </Typography>
+          )}
+          {!success && (
+            <Stack gap={2}>
+              <TextField
+                id="email"
+                type="email"
+                name="email"
+                label="Email"
+                placeholder="your@email.com"
+                value={formData.email}
+                onChange={inputHandler}
+                fullWidth
+                autoFocus
+              />
 
-            <Button
-              variant="contained"
-              sx={{ marginTop: ".5rem" }}
-              onClick={submitHandler}
-            >
-              Send Reset Link
-            </Button>
-          </Stack>
-        )}
+              <Button
+                variant="contained"
+                sx={{ marginTop: ".5rem" }}
+                onClick={submitHandler}
+              >
+                Send Reset Link
+              </Button>
+            </Stack>
+          )}
+        </Paper>
       </Paper>
       <br />
-      {/* </Box> */}
     </Container>
   );
 };

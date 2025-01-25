@@ -1,6 +1,5 @@
 import { useDroppable } from "@dnd-kit/core";
 import {
-  Box,
   Card,
   CardContent,
   Divider,
@@ -14,11 +13,18 @@ export function Droppable(props) {
     id: `${props.id}`,
   });
   const style = {
-    border: isOver ? "1px solid green" : undefined,
+    border: isOver ? "3px dashed black" : undefined,
+    borderRadius: "8px",
   };
 
   return (
-    <Grid2 size={4} ref={setNodeRef} style={style} >
+    <Grid2
+      size={4}
+      ref={setNodeRef}
+      style={style}
+      className="transparentBox"
+      sx={{ padding: "1rem" }}
+    >
       <Card elevation={0} variant="outlined" sx={{ height: "100%" }}>
         <CardContent>
           <Typography textAlign="center" gutterBottom variant="h6">

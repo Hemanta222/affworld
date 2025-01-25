@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Container,
   CssBaseline,
@@ -65,74 +64,79 @@ const SignUp = () => {
     >
       <CssBaseline />
       <Paper
-        elevation={4}
-        sx={{
-          padding: "3rem 2rem",
-          width: { xs: "auto", md: "420px" },
-        }}
+        className="transparentBox"
+        sx={{ padding: "1rem", backgroundColor: "transparent" }}
       >
-        <Typography
-          variant="h5"
-          gutterBottom
+        <Paper
+          elevation={4}
           sx={{
-            fontWeight: "bold",
-            textAlign: "center",
+            padding: "3rem 2rem",
+            width: { xs: "auto", md: "420px" },
           }}
         >
-          Sign Up
-        </Typography>
-        <Typography
-          sx={{ textAlign: "center", marginBottom: "1rem" }}
-          color="textSecondary"
-        >
-          Welcome, please sign up to continue
-        </Typography>
-        <Stack gap={2}>
-          <TextField
-            id="name"
-            type="text"
-            name="name"
-            label="Name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={inputHandler}
-            fullWidth
-            autoFocus
-          />
-          <TextField
-            id="email"
-            type="email"
-            name="email"
-            label="Email"
-            placeholder="your@email.com"
-            value={formData.email}
-            onChange={inputHandler}
-            fullWidth
-          />
-          <TextField
-            name="password"
-            type="password"
-            placeholder="Password"
-            id="password"
-            label="Password"
-            value={formData.password}
-            onChange={inputHandler}
-            fullWidth
-          />
-          <Button
-            variant="contained"
-            sx={{ marginTop: ".5rem" }}
-            onClick={submitHandler}
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{
+              fontWeight: "bold",
+              textAlign: "center",
+            }}
           >
-            Sign up
-          </Button>
-          <Stack direction="row" alignItems="center" gap={3}>
-            <Typography color="textSecondary">Already registered!</Typography>
-            <Button variant="outlined">
-              <Link href="/signin">Sign in</Link>
+            Sign Up
+          </Typography>
+          <Typography
+            sx={{ textAlign: "center", marginBottom: "1rem" }}
+            color="textSecondary"
+          >
+            Welcome, please sign up to continue
+          </Typography>
+          <Stack gap={2}>
+            <TextField
+              id="name"
+              type="text"
+              name="name"
+              label="Name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={inputHandler}
+              fullWidth
+              autoFocus
+            />
+            <TextField
+              id="email"
+              type="email"
+              name="email"
+              label="Email"
+              placeholder="your@email.com"
+              value={formData.email}
+              onChange={inputHandler}
+              fullWidth
+            />
+            <TextField
+              name="password"
+              type="password"
+              placeholder="Password"
+              id="password"
+              label="Password"
+              value={formData.password}
+              onChange={inputHandler}
+              fullWidth
+            />
+            <Button
+              variant="contained"
+              sx={{ marginTop: ".5rem" }}
+              onClick={submitHandler}
+            >
+              Sign up
             </Button>
+            <Stack direction="row" alignItems="center" gap={3}>
+              <Typography color="textSecondary">Already registered!</Typography>
+              <Button variant="outlined">
+                <Link href="/signin">Sign in</Link>
+              </Button>
+            </Stack>
           </Stack>
-        </Stack>
+        </Paper>
       </Paper>
       <br />
       {/* </Box> */}

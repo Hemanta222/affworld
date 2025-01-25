@@ -50,3 +50,19 @@ a {
     #4d91ff 114.8%
   );
 }
+
+.transparentBox {
+  background: linear-gradient(
+    175deg,
+    rgba(255, 255, 255, 0.35) -94.09%,
+    rgba(255, 255, 255, 0) 154.53%
+  );
+  backdrop-filter: blur(27px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: all 0.15s ease-in-out;
+}
+.transparentBox:hover {
+  border: 1px dashed rgba(255, 255, 255, 0.54);
+  box-shadow: 0 0 2px rgb(255 255 255 / 0.7) inset,
+    0px 0px 40px 0px rgb(0 0 0 / 33%);
+}

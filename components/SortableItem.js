@@ -3,13 +3,10 @@ import {
   Card,
   CircularProgress,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
   IconButton,
-  ListItem,
-  ListItemText,
   Stack,
   Typography,
 } from "@mui/material";
@@ -65,7 +62,7 @@ export function SortableItem(props) {
       style={style}
       {...attributes}
       {...listeners}
-      sx={{cursor:'move'}}
+      sx={{ cursor: "move",":hover":{outline:'2px solid #eee'} }}
     >
       <Stack
         direction="row"

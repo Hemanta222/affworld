@@ -3,12 +3,9 @@ import {
   Box,
   Button,
   Container,
-  IconButton,
   Stack,
-  Toolbar,
   Typography,
 } from "@mui/material";
-import Image from "next/image";
 import Link from "next/link";
 import Router from "next/router";
 import React, { useEffect, useState } from "react";
@@ -41,7 +38,7 @@ const Header = () => {
           zIndex: 1000,
           backgroundColor: bgColor,
           transition: "background-color 0.3s ease",
-          backdropFilter:'blur(5px)'
+          backdropFilter: "brightness(.5)",
         }}
       >
         <Container maxWidth="xl">

@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Container,
   CssBaseline,
@@ -68,55 +67,60 @@ const ResetPassword = () => {
     >
       <CssBaseline />
       <Paper
-        elevation={4}
-        sx={{
-          padding: "3rem 2rem",
-          width: { xs: "auto", md: "420px" },
-        }}
+        className="transparentBox"
+        sx={{ padding: "1rem", backgroundColor: "transparent" }}
       >
-        <Typography
-          variant="h5"
-          gutterBottom
+        <Paper
+          elevation={4}
           sx={{
-            fontWeight: "bold",
-            textAlign: "center",
-            marginBottom: "2rem",
+            padding: "3rem 2rem",
+            width: { xs: "auto", md: "420px" },
           }}
         >
-          Reset your password
-        </Typography>
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{
+              fontWeight: "bold",
+              textAlign: "center",
+              marginBottom: "2rem",
+            }}
+          >
+            Reset your password
+          </Typography>
 
-        {!success && (
-          <Stack gap={2}>
-            <TextField
-              name="password"
-              type="password"
-              placeholder="Password"
-              id="password"
-              label="Password"
-              value={formData.password}
-              onChange={inputHandler}
-              fullWidth
-            />
-            <TextField
-              name="confirmPassword"
-              type="password"
-              placeholder="Confirm Password"
-              id="confirmPassword"
-              label="Confirm Password"
-              value={formData.confirmPassword}
-              onChange={inputHandler}
-              fullWidth
-            />
-            <Button
-              variant="contained"
-              sx={{ marginTop: "1rem" }}
-              onClick={submitHandler}
-            >
-              Reset Password
-            </Button>
-          </Stack>
-        )}
+          {!success && (
+            <Stack gap={2}>
+              <TextField
+                name="password"
+                type="password"
+                placeholder="Password"
+                id="password"
+                label="Password"
+                value={formData.password}
+                onChange={inputHandler}
+                fullWidth
+              />
+              <TextField
+                name="confirmPassword"
+                type="password"
+                placeholder="Confirm Password"
+                id="confirmPassword"
+                label="Confirm Password"
+                value={formData.confirmPassword}
+                onChange={inputHandler}
+                fullWidth
+              />
+              <Button
+                variant="contained"
+                sx={{ marginTop: "1rem" }}
+                onClick={submitHandler}
+              >
+                Reset Password
+              </Button>
+            </Stack>
+          )}
+        </Paper>
       </Paper>
       <br />
     </Container>

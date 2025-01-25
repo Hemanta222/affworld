@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React from "react";
-import Header from "./header";
 import { Box, Container } from "@mui/material";
-import Footer from "./footer";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const CommonContainer = (props) => {
   return (
@@ -13,10 +13,12 @@ const CommonContainer = (props) => {
       <Header />
       <Box
         component="main"
-        sx={{ paddingTop: "120px" }}
+        sx={{ paddingTop: "100px" }}
         className="gredientBackground"
       >
-        <Container maxWidth="xl">{props.children}</Container>
+        <Container maxWidth="xl" sx={{ minHeight: "400px", paddingY: "2rem" }}>
+          {props.children}
+        </Container>
       </Box>
       <Footer />
     </>

@@ -36,7 +36,7 @@ const TaskManagement = () => {
         alignItems="center"
         py={2}
       >
-        <Typography variant="h6" sx={{ fontWeight: 500, marginLeft: "8px" }}>
+        <Typography variant="h6" sx={{ fontWeight: 500, marginLeft: "1rem" }}>
           Task Management
         </Typography>
         <Fab
@@ -44,7 +44,7 @@ const TaskManagement = () => {
           aria-label="add"
           onClick={openModal}
           variant="extended"
-          sx={{ marginRight: "8px" }}
+          sx={{ marginRight: "1rem" }}
         >
           <AddIcon /> Add New Task
         </Fab>

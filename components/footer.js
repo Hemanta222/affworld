@@ -1,4 +1,4 @@
-import { Box, Container, Divider, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
@@ -6,7 +6,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import XIcon from "@mui/icons-material/X";
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: "#16111D",width:'100%' }}>
+    <Box sx={{ backgroundColor: "#16111D", width: "100%" }}>
       <Container maxWidth="xl">
         <Box
           sx={{
