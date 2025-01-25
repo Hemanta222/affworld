@@ -13,7 +13,9 @@ export const theme = createTheme({
       white: "#fff",
       black: "#000",
       primary: "#16111D",
-      secondary: "#16111D",
+      // primary:
+      // rgba(0, 0, 0, 0.87)
+      secondary: "rgba(0, 0, 0, 0.6)",
       secondaryLight: "#8082a9",
       disabled: "rgba(0, 0, 0, 0.38)",
     },
