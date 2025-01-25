@@ -40,3 +40,13 @@ a {
     color-scheme: dark;
   }
 }
+
+.gredientBackground {
+  background-color: #7857ff;
+  background: linear-gradient(
+    81.02deg,
+    #fa5560 -23.47%,
+    #b14bf4 45.52%,
+    #4d91ff 114.8%
+  );
+}
