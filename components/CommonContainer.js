@@ -16,7 +16,7 @@ const CommonContainer = (props) => {
         sx={{ paddingTop: "120px" }}
         className="gredientBackground"
       >
-        <Container maxWidth="lg">{props.children}</Container>
+        <Container maxWidth="xl">{props.children}</Container>
       </Box>
       <Footer />
     </>

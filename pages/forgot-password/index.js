@@ -29,7 +29,6 @@ const ForgotPassword = () => {
   };
 
   const submitHandler = () => {
-    console.log("submitted");
     if (formData.email) {
       axios({
         method: "POST",
@@ -39,12 +38,9 @@ const ForgotPassword = () => {
         },
       })
         .then((res) => {
-          console.log("res", res);
           setSuccess(true);
         })
-        .catch((err) => {
-          console.log("err", err);
-        });
+        .catch((err) => {});
     }
   };
   return (
@@ -58,7 +54,6 @@ const ForgotPassword = () => {
         alignItems: "center",
       }}
       className="gredientBackground"
-
     >
       <CssBaseline />
       <Paper

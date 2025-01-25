@@ -25,7 +25,6 @@ const SignIn = () => {
 
   const inputHandler = (e) => {
     const { name, value } = e.target;
-    console.log("name, value ", name, value);
     switch (name) {
       case "email":
         setFormData({ ...formData, email: value });
@@ -38,7 +37,6 @@ const SignIn = () => {
         break;
     }
   };
-  console.log("formData", formData);
 
   const submitHandler = () => {
     if (formData.email && formData.password) {

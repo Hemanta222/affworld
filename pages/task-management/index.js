@@ -1,12 +1,58 @@
+"use client";
+import AddNewTask from "@/components/AddNewTask";
 import CommonContainer from "@/components/CommonContainer";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import { Box } from "@mui/material";
-import Head from "next/head";
-import React from "react";
+import TaskList from "@/components/TaskList";
+import { getTasks } from "@/lib/slice/taskSlice";
+import { Fab, Paper, Stack, Typography } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 const TaskManagement = () => {
-  return <CommonContainer title="Affworl - Task management">thsi is task management</CommonContainer>;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTasks(""));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const [showModal, setshowModal] = useState(false);
+  const closeModal = () => {
+    setshowModal(!showModal);
+  };
+  const openModal = () => {
+    setshowModal(true);
+  };
+
+  return (
+    <CommonContainer title="Affworl - Task management">
+      {showModal ? (
+        <AddNewTask open={showModal} closeModal={closeModal} />
+      ) : null}
+      <Stack
+        component={Paper}
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        py={2}
+      >
+        <Typography variant="h6" sx={{ fontWeight: 500, marginLeft: "8px" }}>
+          Task Management
+        </Typography>
+        <Fab
+          color="primary"
+          aria-label="add"
+          onClick={openModal}
+          variant="extended"
+          sx={{ marginRight: "8px" }}
+        >
+          <AddIcon /> Add New Task
+        </Fab>
+      </Stack>
+
+      <TaskList />
+    </CommonContainer>
+  );
 };
 
 export default TaskManagement;

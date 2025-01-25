@@ -1,6 +1,6 @@
 import CommonContainer from "@/components/CommonContainer";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { checkAuth } from "@/lib/slice/userSlice";
 import { Box, Button, Container, Toolbar } from "@mui/material";
 import { unwrapResult } from "@reduxjs/toolkit";

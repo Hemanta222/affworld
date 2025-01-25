@@ -20,7 +20,6 @@ const SignUp = () => {
   });
   const inputHandler = (e) => {
     const { name, value } = e.target;
-    console.log("name, value ", name, value);
     switch (name) {
       case "name":
         setFormData({ ...formData, name: value });
@@ -38,7 +37,6 @@ const SignUp = () => {
   };
 
   const submitHandler = () => {
-    console.log("submitted");
     if (formData.name && formData.email && formData.password) {
       axios({
         method: "POST",
@@ -48,13 +46,9 @@ const SignUp = () => {
           name: formData.name,
           password: formData.password,
         },
-      })
-        .then((res) => {
-          console.log("res", res);
-        })
-        .catch((err) => {
-          console.log("err", err);
-        });
+      }).catch((err) => {
+        console.log("err", err);
+      });
     }
   };
   return (

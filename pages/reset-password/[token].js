@@ -19,10 +19,9 @@ const ResetPassword = () => {
   });
   const [success, setSuccess] = useState(false);
   const router = useRouter();
-  console.log("router.query", router.query);
+
   const inputHandler = (e) => {
     const { name, value } = e.target;
-    console.log("name, value ", name, value);
     switch (name) {
       case "password":
         setFormData({ ...formData, password: value });
@@ -36,7 +35,6 @@ const ResetPassword = () => {
     }
   };
   const submitHandler = () => {
-    console.log("submitted");
     if (formData.confirmPassword) {
       axios({
         method: "POST",
@@ -44,13 +42,11 @@ const ResetPassword = () => {
           process.env.NEXT_PUBLIC_API_URL +
           "reset-password/" +
           router.query.token,
-        // params: { token: router.query.token },
         data: {
           newPassword: formData.confirmPassword,
         },
       })
         .then((res) => {
-          console.log("res", res);
           setSuccess(true);
         })
         .catch((err) => {

@@ -41,9 +41,10 @@ const Header = () => {
           zIndex: 1000,
           backgroundColor: bgColor,
           transition: "background-color 0.3s ease",
+          backdropFilter:'blur(5px)'
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           <Box
             sx={{
               display: "flex",
