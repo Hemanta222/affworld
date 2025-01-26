@@ -16,7 +16,7 @@ import AddNewPost from "../../components/AddNewPost";
 
 import Post from "../../components/Post";
 import { getPosts } from "@/lib/slice/postSlice";
-import CommonContainer from "@/components/CommonContainer";
+import CommonContainer from "@/components/commonContainer";
 const Posts = () => {
   const dispatch = useDispatch();
   const [showAddForm, setShowAddForm] = useState(false);
@@ -37,11 +37,38 @@ const Posts = () => {
     return (
       <CommonContainer title="Affworl - Feeds">
         <Container maxWidth={"md"}>
+          <Paper
+            sx={{
+              padding: "1rem 2rem",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="h6">#POSTS</Typography>
+            <Fab
+              variant="extended"
+              color="primary"
+              aria-label="add"
+              onClick={openForm}
+            >
+              <AddOutlinedIcon sx={{ mr: 1 }} />
+              Add Post
+            </Fab>
+          </Paper>
+          <Collapse orientation="vertical" in={showAddForm} collapsedSize={0}>
+            <AddNewPost hidePost={closeForm} />
+          </Collapse>
           <Box
             component="img"
             alt="no_posts"
             src="/no-feeds.jpg"
-            sx={{ width: "100%", height: "100%", borderRadius: "1rem" }}
+            sx={{
+              width: "100%",
+              height: "100%",
+              borderRadius: "8px",
+              marginTop: "1rem",
+            }}
           />
         </Container>
       </CommonContainer>
