@@ -1,5 +1,5 @@
-import CommonContainer from "@/components/CommonContainer";
-import Post from "@/components/Post";
+import CommonContainer from "@/Components/CommonContainer";
+import Post from "@/Components/Post";
 import { getPosts } from "@/lib/slice/postSlice";
 import {
   Box,
@@ -15,7 +15,7 @@ import {
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import AddNewPost from "@/components/AddNewPost";
+import AddNewPost from "@/Components/AddNewPost";
 
 const Posts = () => {
   const dispatch = useDispatch();

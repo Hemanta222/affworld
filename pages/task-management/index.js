@@ -1,7 +1,7 @@
 "use client";
-import AddNewTask from "@/components/AddNewTask";
-import CommonContainer from "@/components/CommonContainer";
-import TaskList from "@/components/TaskList";
+import AddNewTask from "@/Components/AddNewTask";
+import CommonContainer from "@/Components/CommonContainer";
+import TaskList from "@/Components/TaskList";
 import { getTasks } from "@/lib/slice/taskSlice";
 import { Fab, Paper, Stack, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
