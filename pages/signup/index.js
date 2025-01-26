@@ -50,6 +50,7 @@ const SignUp = () => {
         },
       })
         .then((res) => {
+          console.log("res", res);
           toast.success(res.message || "Signup successfully", {
             position: "top-right",
             theme: "dark",
@@ -57,7 +58,7 @@ const SignUp = () => {
           router.push("/signin");
         })
         .catch((err) => {
-          toast.error(err.message || "failed", {
+          toast.error(err?.response?.data?.message || "Signup failed", {
             position: "top-right",
             theme: "dark",
           });
