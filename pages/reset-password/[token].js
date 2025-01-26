@@ -7,9 +7,11 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { unwrapResult } from "@reduxjs/toolkit";
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const ResetPassword = () => {
   const [formData, setFormData] = useState({
@@ -46,10 +48,17 @@ const ResetPassword = () => {
         },
       })
         .then((res) => {
-          setSuccess(true);
+          toast.success(res.message || "Password reset successfully", {
+            position: "top-right",
+            theme: "dark",
+          });
+          router.push("/signin");
         })
         .catch((err) => {
-          console.log("err", err);
+          toast.error(err.message || "Failed to reset password", {
+            position: "top-right",
+            theme: "dark",
+          });
         });
     }
   };

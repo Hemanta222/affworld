@@ -9,9 +9,12 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
-
+import { toast } from "react-toastify";
 const SignUp = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,9 +48,20 @@ const SignUp = () => {
           name: formData.name,
           password: formData.password,
         },
-      }).catch((err) => {
-        console.log("err", err);
-      });
+      })
+        .then((res) => {
+          toast.success(res.message || "Signup successfully", {
+            position: "top-right",
+            theme: "dark",
+          });
+          router.push("/signin");
+        })
+        .catch((err) => {
+          toast.error(err.message || "failed", {
+            position: "top-right",
+            theme: "dark",
+          });
+        });
     }
   };
   return (
