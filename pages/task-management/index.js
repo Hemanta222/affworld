@@ -5,10 +5,10 @@ import AddIcon from "@mui/icons-material/Add";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import AddNewTask from "../../Components/AddNewTask";
-import CommonContainer from "../../Components/CommonContainer";
-import TaskList from "../..//Components/TaskList";
+import AddNewTask from "../../components/AddNewTask";
+import TaskList from "../../components/TaskList";
 import { getTasks } from "@/lib/slice/taskSlice";
+import CommonContainer from "@/components/CommonContainer";
 
 const TaskManagement = () => {
   const dispatch = useDispatch();

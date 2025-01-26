@@ -12,10 +12,11 @@ import {
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import AddNewPost from "../../Components/AddNewPost";
-import CommonContainer from "../../Components/CommonContainer";
-import Post from "../../Components/Post";
+import AddNewPost from "../../components/AddNewPost";
+
+import Post from "../../components/Post";
 import { getPosts } from "@/lib/slice/postSlice";
+import CommonContainer from "@/components/CommonContainer";
 const Posts = () => {
   const dispatch = useDispatch();
   const [showAddForm, setShowAddForm] = useState(false);

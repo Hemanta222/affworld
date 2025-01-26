@@ -1,5 +1,4 @@
-import CommonContainer from "../Components/CommonContainer";
-
+import CommonContainer from "@/components/CommonContainer";
 import { checkAuth } from "@/lib/slice/userSlice";
 import { Button, Container } from "@mui/material";
 import { unwrapResult } from "@reduxjs/toolkit";
