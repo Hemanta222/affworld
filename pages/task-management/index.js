@@ -1,12 +1,14 @@
 "use client";
-import AddNewTask from "@/Components/AddNewTask";
-import CommonContainer from "@/Components/CommonContainer";
-import TaskList from "@/Components/TaskList";
-import { getTasks } from "@/lib/slice/taskSlice";
+
 import { Fab, Paper, Stack, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+
+import AddNewTask from "../../Components/AddNewTask";
+import CommonContainer from "../../Components/CommonContainer";
+import TaskList from "../..//Components/TaskList";
+import { getTasks } from "@/lib/slice/taskSlice";
 
 const TaskManagement = () => {
   const dispatch = useDispatch();

@@ -1,4 +1,4 @@
-import CommonContainer from "@/Components/CommonContainer";
+import CommonContainer from "../Components/CommonContainer";
 
 import { checkAuth } from "@/lib/slice/userSlice";
 import { Button, Container } from "@mui/material";

@@ -1,6 +1,3 @@
-import CommonContainer from "@/Components/CommonContainer";
-import Post from "@/Components/Post";
-import { getPosts } from "@/lib/slice/postSlice";
 import {
   Box,
   Collapse,
@@ -15,8 +12,10 @@ import {
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import AddNewPost from "@/Components/AddNewPost";
-
+import AddNewPost from "../../Components/AddNewPost";
+import CommonContainer from "../../Components/CommonContainer";
+import Post from "../../Components/Post";
+import { getPosts } from "@/lib/slice/postSlice";
 const Posts = () => {
   const dispatch = useDispatch();
   const [showAddForm, setShowAddForm] = useState(false);
