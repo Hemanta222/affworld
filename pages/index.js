@@ -1,10 +1,8 @@
 import CommonContainer from "@/components/CommonContainer";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+
 import { checkAuth } from "@/lib/slice/userSlice";
-import { Box, Button, Container, Toolbar } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import { unwrapResult } from "@reduxjs/toolkit";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
