@@ -16,7 +16,7 @@ import AddNewPost from "../../components/AddNewPost";
 
 import Post from "../../components/Post";
 import { getPosts } from "@/lib/slice/postSlice";
-import CommonContainer from "@/components/commonContainer";
+import CommonContainer from "@/components/CommonContainer";
 const Posts = () => {
   const dispatch = useDispatch();
   const [showAddForm, setShowAddForm] = useState(false);
